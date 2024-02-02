@@ -5,7 +5,8 @@ if __name__ == "__main__":
     spark = SparkSession.builder.appName("HelloWorld").getOrCreate()
     sc = spark.sparkContext
 
-    rdd = sc.parallelize([1, 2, 3, 4, 5])
+    data = ["Hello", "World"]
+    rdd = sc.parallelize(data)
     rdd.foreach(print)
 
     spark.stop()
